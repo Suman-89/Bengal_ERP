@@ -15,27 +15,29 @@ import {
   cilStar,
 } from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBook, faFileInvoice, faFileLines, faSheetPlastic } from '@fortawesome/free-solid-svg-icons'
 
 const _nav = [
   // {
   //   component: CNavItem,
-  //   name: 'Dashboard',
-  //   to: '/dashboard',
-  //   icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
-  //   badge: {
-  //     color: 'info',
-  //     text: 'NEW',
-  //   },
+  //   name: 'Cash Book',
+  //   to: '/cashbook',
+  //   icon: <FontAwesomeIcon icon={faBook} />,
+  // badge: {
+  //   color: 'info',
+  //   text: 'NEW',
+  // },
   // },
   // {
   //   component: CNavTitle,
-  //   name: 'Theme',
+  //   name: 'Menu',
   // },
   // {
   //   component: CNavItem,
-  //   name: 'Colors',
-  //   to: '/theme/colors',
-  //   icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+  //   name: 'Cash Book',
+  //   to: '/cashbook',
+  //   icon: <FontAwesomeIcon icon={faBook} />,
   // },
   // {
   //   component: CNavItem,
@@ -465,43 +467,72 @@ const _nav = [
   //     text: 'NEW',
   //   },
   // },
-  // {
-  //   component: CNavTitle,
-  //   name: 'Extras',
-  // },
-  // {
-  //   component: CNavGroup,
-  //   name: 'Pages',
-  //   icon: <CIcon icon={cilStar} customClassName="nav-icon" />,
-  //   items: [
-  //     {
-  //       component: CNavItem,
-  //       name: 'Login',
-  //       to: '/login',
-  //     },
-  //     {
-  //       component: CNavItem,
-  //       name: 'Register',
-  //       to: '/register',
-  //     },
-  //     {
-  //       component: CNavItem,
-  //       name: 'Error 404',
-  //       to: '/404',
-  //     },
-  //     {
-  //       component: CNavItem,
-  //       name: 'Error 500',
-  //       to: '/500',
-  //     },
-  //   ],
-  // },
+  {
+    component: CNavTitle,
+    name: 'Menu',
+  },
+  {
+    component: CNavGroup,
+    name: 'Invoice & Rokad',
+    icon: <FontAwesomeIcon icon={faFileInvoice} />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Sales',
+        to: '/sales',
+      },
+      {
+        component: CNavItem,
+        name: 'Purchase',
+        to: '/purchase',
+      },
+      {
+        component: CNavItem,
+        name: 'Cash Book',
+        to: '/cashbook',
+      },
+    ],
+  },
+   {
+    component: CNavGroup,
+    name: 'Master Forms',
+    icon:<FontAwesomeIcon icon={faSheetPlastic} />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Item Master',
+        to: '/itemmaster',
+      },
+      {
+        component: CNavItem,
+        name: 'Ledger Master',
+        to: '/ledgermaster',
+      }
+    ],
+  },
+     {
+    component: CNavGroup,
+    name: 'Others',
+    icon: <FontAwesomeIcon icon={faFileLines} />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Stock Transfer',
+        to: '/stocktransfer',
+      },
+      {
+        component: CNavItem,
+        name: 'Godown',
+        to: '/godown',
+      }
+    ],
+  },
   // {
   //   component: CNavItem,
   //   name: 'Docs',
   //   href: 'https://coreui.io/react/docs/templates/installation/',
   //   icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
-  // },
+  ,
 ]
 
 export default _nav

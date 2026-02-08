@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   CButton,
+  CButtonGroup,
   CCard,
   CCardBody,
   CCardGroup,
@@ -14,9 +15,15 @@ import {
   CRow,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { cilLockLocked, cilUser } from '@coreui/icons'
+import { cilLockLocked, cilUser, cilLowVision } from '@coreui/icons'
+import swastikBg from './../../../assets/images/swastik.webp'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye } from '@fortawesome/free-regular-svg-icons'
+import { faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 
 const Login = () => {
+  const [show, setShow] = useState(false)
+
   return (
     <div className="bg-body-tertiary min-vh-100 d-flex flex-row align-items-center">
       <CContainer>
@@ -39,41 +46,63 @@ const Login = () => {
                         <CIcon icon={cilLockLocked} />
                       </CInputGroupText>
                       <CFormInput
-                        type="password"
+                        type={show ? 'text' : 'password'}
                         placeholder="Password"
                         autoComplete="current-password"
                       />
+                      <CInputGroupText
+                        role="button"
+                        tabIndex={0}
+                        aria-label={show ? 'Hide password' : 'Show password'}
+                        onClick={() => setShow(!show)}
+                        onKeyDown={(e) => e.key === 'Enter' && setShow((prev) => !prev)}
+                        style={{ cursor: 'pointer',backgroundColor: 'transparent' }}
+                      >
+                        {/* <CIcon icon={show ? cilLowVision : ''} /> */}
+                       { show ?<FontAwesomeIcon icon={faEyeSlash} /> : <FontAwesomeIcon icon={faEye} />}
+                      </CInputGroupText>
                     </CInputGroup>
                     <CRow>
                       <CCol xs={6}>
-                        <CButton color="primary" className="px-4">
-                          Login
-                        </CButton>
+                        <CButtonGroup role="group" aria-label="Default button group">
+                          <CButton color="primary" size="small" className="px-4">
+                            Ok
+                          </CButton>
+                          <CButton color="warning" size="small" className="px-4">
+                            Close
+                          </CButton>
+                        </CButtonGroup>
                       </CCol>
-                      <CCol xs={6} className="text-right">
-                        <CButton color="link" className="px-0">
-                          Forgot password?
+                      <CCol xs={6}>
+                        <CButton color="link" className="px-4">
+                          New Password?
                         </CButton>
                       </CCol>
                     </CRow>
                   </CForm>
                 </CCardBody>
               </CCard>
-              <CCard className="text-white bg-primary py-5" style={{ width: '44%' }}>
-                <CCardBody className="text-center">
+              <CCard
+                className="text-white bg-warning py-5"
+                style={{
+                  width: '44%',
+                  backgroundImage: `url(${swastikBg})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              >
+                {/* <CCardBody className="text-center">
                   <div>
                     <h2>Sign up</h2>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
+                    <p>New here? Sign up and discover great experience with the Application.</p>
                     <Link to="/register">
-                      <CButton color="primary" className="mt-3" active tabIndex={-1}>
+                      <CButton color="warning" className="mt-3" active tabIndex={-1}>
                         Register Now!
                       </CButton>
                     </Link>
                   </div>
-                </CCardBody>
+                </CCardBody> */}
               </CCard>
             </CCardGroup>
           </CCol>

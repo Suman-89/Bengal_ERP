@@ -1,0 +1,186 @@
+/* =========================================================
+   CoreUI Custom Theme (Global)
+   ========================================================= */
+
+/* -----------------------------
+   CoreUI variable overrides
+   IMPORTANT: must come BEFORE CoreUI loads
+   ----------------------------- */
+
+@use "@coreui/coreui/scss/coreui" as * with (
+  $enable-deprecation-messages: false,
+
+  /* 🎨 Brand Colors */
+  $primary: #6a1b9a,
+  $secondary: #455a64,
+  $success: #2e7d32,
+  $danger: #c62828,
+  $warning: #ed6c02,
+  $info: #0288d1,
+
+  /* Base colors */
+  $light: #f8f9fa,
+  $dark: #0f172a,
+
+  /* 🧭 Layout */
+  $header-bg: #ffffff,
+  $header-color: #1e293b,
+
+  /* 📚 Sidebar */
+  $sidebar-bg: #1e1e2f,
+  $sidebar-color: #cfd8dc,
+  $sidebar-nav-link-color: #cfd8dc,
+  $sidebar-nav-link-hover-color: #ffffff,
+  $sidebar-nav-link-hover-bg: rgba(255, 255, 255, 0.08),
+  $sidebar-nav-link-active-color: #ffffff,
+  $sidebar-nav-link-active-bg: rgba(106, 27, 154, 0.25),
+);
+
+/* -----------------------------
+   Vendor styles
+   ----------------------------- */
+
+@use "@coreui/chartjs/scss/coreui-chartjs";
+@use "vendors/simplebar";
+
+/* =========================================================
+   Global styles
+   ========================================================= */
+
+body {
+  background-color: var(--cui-tertiary-bg);
+  color: var(--cui-body-color);
+}
+
+/* Layout wrapper */
+.wrapper {
+  width: 100%;
+  padding-inline: var(--cui-sidebar-occupy-start, 0)
+                  var(--cui-sidebar-occupy-end, 0);
+  will-change: auto;
+  @include transition(padding 0.15s);
+}
+
+/* =========================================================
+   Header
+   ========================================================= */
+
+.header > .container-fluid,
+.sidebar-header {
+  min-height: calc(4rem + 1px);
+}
+
+.header {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================================
+   Sidebar
+   ========================================================= */
+
+.sidebar-brand-full {
+  margin-left: 3px;
+}
+
+.sidebar-header {
+  .nav-underline-border {
+    --cui-nav-underline-border-link-padding-x: 1rem;
+    --cui-nav-underline-border-gap: 0;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    min-height: calc(4rem + 1px);
+  }
+}
+
+.sidebar-toggler {
+  margin-inline-start: auto;
+}
+
+.sidebar-narrow,
+.sidebar-narrow-unfoldable:not(:hover) {
+  .sidebar-toggler {
+    margin-inline-end: auto;
+  }
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+
+.header > .container-fluid + .container-fluid {
+  min-height: 3rem;
+}
+
+.footer {
+  min-height: calc(3rem + 1px);
+  border-top: 1px solid var(--cui-border-color);
+}
+
+/* =========================================================
+   Buttons (Refined UX)
+   ========================================================= */
+
+.btn-primary {
+  --cui-btn-hover-bg: #4a148c;
+  --cui-btn-hover-border-color: #4a148c;
+  --cui-btn-active-bg: #38006b;
+  --cui-btn-active-border-color: #38006b;
+}
+
+.btn-danger {
+  --cui-btn-hover-bg: #b71c1c;
+  --cui-btn-active-bg: #7f0000;
+}
+
+/* =========================================================
+   Cards & Forms
+   ========================================================= */
+
+.card {
+  border-radius: 0.75rem;
+}
+
+.form-control:focus {
+  border-color: var(--cui-primary);
+  box-shadow: 0 0 0 0.15rem rgba(106, 27, 154, 0.25);
+}
+
+/* =========================================================
+   Dark Mode
+   ========================================================= */
+
+@include color-mode(dark) {
+  body {
+    background-color: #020617;
+    color: #e5e7eb;
+  }
+
+  .header {
+    --cui-header-bg: #020617;
+    --cui-header-color: #e5e7eb;
+  }
+
+  .sidebar {
+    --cui-sidebar-bg: #020617;
+    --cui-sidebar-color: #94a3b8;
+  }
+
+  .footer {
+    --cui-footer-bg: #020617;
+    --cui-footer-color: #94a3b8;
+  }
+
+  .card {
+    background-color: #020617;
+    border-color: #1e293b;
+  }
+
+  .form-control {
+    background-color: #020617;
+    color: #e5e7eb;
+    border-color: #1e293b;
+  }
+}

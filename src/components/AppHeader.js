@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import {
@@ -13,6 +13,7 @@ import {
   CNavLink,
   CNavItem,
   useColorModes,
+  CDropdownDivider,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import {
@@ -31,6 +32,7 @@ import { AppHeaderDropdown } from './header/index'
 const AppHeader = () => {
   const headerRef = useRef()
   const { colorMode, setColorMode } = useColorModes('coreui-free-react-admin-template-theme')
+  const [showMenu, setShowMenu] = useState(false)
 
   const dispatch = useDispatch()
   const sidebarShow = useSelector((state) => state.sidebarShow)
@@ -56,28 +58,78 @@ const AppHeader = () => {
         </CHeaderToggler>
         <CHeaderNav className="d-none d-md-flex">
           <CNavItem>
-            <CNavLink to="/dashboard" as={NavLink}>
+            <CNavLink to="/" as={NavLink}>
               Dashboard
             </CNavLink>
           </CNavItem>
           <CNavItem>
-            <CNavLink href="#">Users</CNavLink>
+            <CNavLink to="/" as={NavLink}>
+              Menu
+            </CNavLink>
           </CNavItem>
           <CNavItem>
-            <CNavLink href="#">Settings</CNavLink>
+            <CNavLink to="/" as={NavLink}>
+              Reports
+            </CNavLink>
           </CNavItem>
         </CHeaderNav>
         <CHeaderNav className="ms-auto">
+          {/* LIST DROPDOWN */}
+          <CDropdown variant="nav-item" placement="bottom-end">
+            <CDropdownToggle caret={false}>
+              <CIcon icon={cilList} size="lg" />
+            </CDropdownToggle>
+
+            <CDropdownMenu style={{ minWidth: '240px', maxHeight: '300px', overflowY: 'auto' }}>
+              <CDropdownItem href="#">Item Master</CDropdownItem>
+              <CDropdownDivider />
+
+              <CDropdownItem href="#">Accounts Master</CDropdownItem>
+              <CDropdownDivider />
+
+              <CDropdownItem href="#">Manual STK</CDropdownItem>
+              <CDropdownDivider />
+
+              <CDropdownItem href="#">Order</CDropdownItem>
+              <CDropdownDivider />
+
+              <CDropdownItem href="#">Stock Transfer</CDropdownItem>
+              <CDropdownDivider />
+
+              <CDropdownItem href="#">Invoice</CDropdownItem>
+              <CDropdownDivider />
+
+              <CDropdownItem href="#">Accounts Form</CDropdownItem>
+              <CDropdownDivider />
+
+              <CDropdownItem href="#">Godown</CDropdownItem>
+              <CDropdownDivider />
+
+              <CDropdownItem href="#">Accounts Report</CDropdownItem>
+              <CDropdownDivider />
+
+              <CDropdownItem href="#">Inventory Report</CDropdownItem>
+              <CDropdownDivider />
+
+              <CDropdownItem href="#">VAT Report</CDropdownItem>
+              <CDropdownDivider />
+
+              <CDropdownItem href="#">Employee</CDropdownItem>
+              <CDropdownDivider />
+
+              <CDropdownItem href="#">Utilities</CDropdownItem>
+              <CDropdownDivider />
+
+              <CDropdownItem href="#">Support</CDropdownItem>
+            </CDropdownMenu>
+          </CDropdown>
+          {/*  Notification*/}
           <CNavItem>
             <CNavLink href="#">
               <CIcon icon={cilBell} size="lg" />
             </CNavLink>
           </CNavItem>
-          <CNavItem>
-            <CNavLink href="#">
-              <CIcon icon={cilList} size="lg" />
-            </CNavLink>
-          </CNavItem>
+          {/* Messages */}
           <CNavItem>
             <CNavLink href="#">
               <CIcon icon={cilEnvelopeOpen} size="lg" />

@@ -17,9 +17,13 @@ import {
   CRow,
 } from '@coreui/react'
 import { DocsComponents, DocsExample } from 'src/components'
+import DatePicker from 'react-datepicker'
 
 const CustomStyles = () => {
   const [validated, setValidated] = useState(false)
+  const [purchaseDate, setPurchaseDate] = useState(null)
+  const [savedDate, setSavedDate] = useState(null)
+
   const handleSubmit = (event) => {
     const form = event.currentTarget
     if (form.checkValidity() === false) {
@@ -35,13 +39,37 @@ const CustomStyles = () => {
       validated={validated}
       onSubmit={handleSubmit}
     >
-      <CCol md={12} className="d-flex gap-3">
+      <CCol md={6} className="d-flex gap-3">
         <CFormCheck id="flexCheckDefault" label="Including Tax" />
         <CFormCheck id="flexCheckDefault" label="Others" />
         <CFormCheck id="flexCheckDefault" label="Orders" />
         <CFormCheck id="flexCheckDefault" label="Advanced Search" />
         <CFormCheck id="flexCheckDefault" label="Transfer" />
       </CCol>
+     <CCol md={6} className="d-flex gap-3 justify-content-space-between">
+  <div>
+    {/* <CFormLabel>Purchased Entry</CFormLabel> */}
+    <DatePicker
+      selected={purchaseDate}
+      onChange={(date) => setPurchaseDate(date)}
+      dateFormat="dd/MM/yyyy"
+      className="form-control"
+      placeholderText="Purchased Entry"
+    />
+  </div>
+
+  <div>
+    {/* <CFormLabel>y</CFormLabel> */}
+    <DatePicker
+      selected={savedDate}
+      onChange={(date) => setSavedDate(date)}
+      dateFormat="dd/MM/yyyy"
+      className="form-control"
+      placeholderText="Last Saved Entry"
+    />
+  </div>
+</CCol>
+
       <CCol xs={12}>
         {/* <DocsComponents href="forms/select/" /> */}
 
@@ -222,62 +250,62 @@ const CustomStyles = () => {
 const SalesList = () => {
   return (
     <>
-    <table className="table">
-      <thead>
-        <tr>
-          <th scope="col">SL No.</th>
-          <th scope="col">Item</th>
-          <th scope="col">Pack</th>
-          <th scope="col">Quantity</th>
-          <th scope="col">Rate</th>
-          <th scope="col">Value</th>
-          <th scope="col">Discount %</th>
-          <th scope="col">Amount</th>
-          <th scope="col">Tax Name</th>
-          <th scope="col">Net Amount</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>test data</td>
-          <td>test data</td>
-          <td>test data</td>
-          <td>test data</td>
-          <td>test data</td>
-          <td>test data</td>
-          <td>test data</td>
-          <td>test data</td>
-          <td>test data</td>
-        </tr>
-      </tbody>
-    </table>
-    <CCol xs={12} className="d-flex gap-3 justify-content-start">
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">SL No.</th>
+            <th scope="col">Item</th>
+            <th scope="col">Pack</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Rate</th>
+            <th scope="col">Value</th>
+            <th scope="col">Discount %</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Tax Name</th>
+            <th scope="col">Net Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>test data</td>
+            <td>test data</td>
+            <td>test data</td>
+            <td>test data</td>
+            <td>test data</td>
+            <td>test data</td>
+            <td>test data</td>
+            <td>test data</td>
+            <td>test data</td>
+          </tr>
+        </tbody>
+      </table>
+      <CCol xs={12} className="d-flex gap-3 justify-content-start">
         <CButton color="primary" type="submit">
           Add
         </CButton>
-          <CButton color="primary" type="submit">
+        <CButton color="primary" type="submit">
           Modify
         </CButton>
-          <CButton color="warning" type="submit">
+        <CButton color="warning" type="submit">
           Remove
         </CButton>
-          <CButton color="primary" type="submit">
+        <CButton color="primary" type="submit">
           Save
         </CButton>
-          <CButton color="primary" type="submit">
+        <CButton color="primary" type="submit">
           Open
         </CButton>
-          <CButton color="danger" type="submit">
+        <CButton color="danger" type="submit">
           Delete
         </CButton>
-          <CButton color="danger" type="submit">
+        <CButton color="danger" type="submit">
           Cancel
         </CButton>
-          <CButton color="info" type="submit">
+        <CButton color="info" type="submit">
           Daily Panna
         </CButton>
-          <CButton color="danger" type="submit">
+        <CButton color="danger" type="submit">
           Close
         </CButton>
       </CCol>
@@ -285,26 +313,30 @@ const SalesList = () => {
   )
 }
 
-const Validation = () => {
+const SalesDetails = () => {
   return (
     <CRow>
       <CCol xs={12}>
-        {/* <DocsComponents href="forms/validation/" /> */}
         <CCard className="mb-4">
           <CCardHeader>
             <strong>Sales</strong> <small>Invoice</small>
           </CCardHeader>
-          <CCardBody>{CustomStyles()}</CCardBody>
+          <CCardBody>
+            <CustomStyles />
+          </CCardBody>
         </CCard>
+
         <CCard className="mb-4">
           <CCardHeader>
             <strong>Sales</strong> <small>List</small>
           </CCardHeader>
-          <CCardBody>{SalesList()}</CCardBody>
+          <CCardBody>
+            <SalesList />
+          </CCardBody>
         </CCard>
       </CCol>
     </CRow>
   )
 }
 
-export default Validation
+export default SalesDetails

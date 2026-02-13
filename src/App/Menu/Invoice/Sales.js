@@ -18,6 +18,7 @@ import {
 } from '@coreui/react'
 import { DocsComponents, DocsExample } from 'src/components'
 import DatePicker from 'react-datepicker'
+import ButtonGroup from '../../../components/Buttons/ButtonGroup'
 
 const CustomStyles = () => {
   const [validated, setValidated] = useState(false)
@@ -54,7 +55,7 @@ const CustomStyles = () => {
       onChange={(date) => setPurchaseDate(date)}
       dateFormat="dd/MM/yyyy"
       className="form-control"
-      placeholderText="Purchased Entry"
+      placeholderText="Purchased Entry Date"
     />
   </div>
 
@@ -65,7 +66,7 @@ const CustomStyles = () => {
       onChange={(date) => setSavedDate(date)}
       dateFormat="dd/MM/yyyy"
       className="form-control"
-      placeholderText="Last Saved Entry"
+      placeholderText="Last Saved Entry Date"
     />
   </div>
 </CCol>
@@ -281,33 +282,7 @@ const SalesList = () => {
         </tbody>
       </table>
       <CCol xs={12} className="d-flex gap-3 justify-content-start">
-        <CButton color="primary" type="submit">
-          Add
-        </CButton>
-        <CButton color="primary" type="submit">
-          Modify
-        </CButton>
-        <CButton color="warning" type="submit">
-          Remove
-        </CButton>
-        <CButton color="primary" type="submit">
-          Save
-        </CButton>
-        <CButton color="primary" type="submit">
-          Open
-        </CButton>
-        <CButton color="danger" type="submit">
-          Delete
-        </CButton>
-        <CButton color="danger" type="submit">
-          Cancel
-        </CButton>
-        <CButton color="info" type="submit">
-          Daily Panna
-        </CButton>
-        <CButton color="danger" type="submit">
-          Close
-        </CButton>
+        <ButtonGroup />
       </CCol>
     </>
   )
@@ -328,7 +303,7 @@ const SalesDetails = () => {
 
         <CCard className="mb-4">
           <CCardHeader>
-            <strong>Sales</strong> <small>List</small>
+            <strong>Sales</strong> <small>Details</small>
           </CCardHeader>
           <CCardBody>
             <SalesList />

@@ -6,6 +6,7 @@ import React from 'react';
 const CashBook = React.lazy(() => import('../App/Menu/Invoice/CashBook'));
 const Sales = React.lazy(() => import('../App/Menu/Invoice/Sales'));
 const Purchase = React.lazy(() => import('../App/Menu/Invoice/Purchase'));
+const AddNewSales = React.lazy(() => import('../App/Menu/Invoice/AddNewSales'));
 // Menu Pages for MasterForms
 const ItemMaster = React.lazy(() => import('../App/Menu/MasterForms/ItemMaster'));
 const LedgerMaster = React.lazy(() => import('../App/Menu/MasterForms/LedgerMaster'));
@@ -38,6 +39,7 @@ const SalesGraph = React.lazy(() => import('../App/Report/MonthlyGraphical/Sales
   const AppRoutes = [
   {path: '/cashbook', name: 'Cash Book', element: CashBook, exact: true },
   {path: '/sales', name: 'Sales', element: Sales, exact: true },
+  {path: '/addnewsales', name: 'Add New Sales', element: AddNewSales, exact: true },
   {path: '/purchase', name: 'Purchase', element: Purchase, exact: true },
   {path: '/itemmaster', name: 'Item Master', element: ItemMaster, exact: true },
   {path: '/ledgermaster', name: 'Ledger Master', element: LedgerMaster, exact: true },

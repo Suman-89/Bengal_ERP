@@ -58,17 +58,17 @@ const AppHeader = () => {
         </CHeaderToggler>
         <CHeaderNav className="d-none d-md-flex">
           <CNavItem>
-            <CNavLink to="/" as={NavLink}>
+            <CNavLink to="/dashboard" as={NavLink}>
               Dashboard
             </CNavLink>
           </CNavItem>
           <CNavItem>
-            <CNavLink to="/" as={NavLink}>
+            <CNavLink to="/sales" as={NavLink}>
               Menu
             </CNavLink>
           </CNavItem>
           <CNavItem>
-            <CNavLink to="/" as={NavLink}>
+            <CNavLink to="/reports" as={NavLink}>
               Reports
             </CNavLink>
           </CNavItem>

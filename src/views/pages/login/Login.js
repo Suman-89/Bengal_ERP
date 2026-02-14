@@ -65,7 +65,7 @@ const Login = () => {
                     <CRow>
                       <CCol xs={6}>
                         <CButtonGroup role="group" aria-label="Default button group">
-                          <CButton color="primary" size="small" className="px-4">
+                          <CButton color="primary" size="small" className="px-4" href='#/dashboard'>
                             Ok
                           </CButton>
                           <CButton color="warning" size="small" className="px-4">
@@ -82,7 +82,7 @@ const Login = () => {
                   </CForm>
                 </CCardBody>
               </CCard>
-              <CCard
+              {/* <CCard
                 className="text-white bg-warning py-5"
                 style={{
                   width: '44%',
@@ -92,18 +92,7 @@ const Login = () => {
                   backgroundRepeat: 'no-repeat',
                 }}
               >
-                {/* <CCardBody className="text-center">
-                  <div>
-                    <h2>Sign up</h2>
-                    <p>New here? Sign up and discover great experience with the Application.</p>
-                    <Link to="/register">
-                      <CButton color="warning" className="mt-3" active tabIndex={-1}>
-                        Register Now!
-                      </CButton>
-                    </Link>
-                  </div>
-                </CCardBody> */}
-              </CCard>
+              </CCard> */}
             </CCardGroup>
           </CCol>
         </CRow>

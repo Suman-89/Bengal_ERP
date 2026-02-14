@@ -35,11 +35,14 @@ const AppSidebar = () => {
       }}
     >
       <CSidebarHeader className="border-bottom">
-        <CSidebarBrand to="/">
-          <img src={logo} height="65" alt="Logo" />
+        <CSidebarBrand
+          to="/"
+          className="d-flex align-items-center justify-content-center flex-column text-decoration-none gap-2"
+        >
+          <img className="rounded-circle" src={logo} height="65" alt="Logo" />
           {/* <CIcon customClassName="sidebar-brand-full" icon={logo} height={32} />
           <CIcon customClassName="sidebar-brand-narrow" icon={sygnet} height={32} /> */}
-          
+          <h6 className="text-white">Bengal Sales Corporation</h6>
         </CSidebarBrand>
         <CCloseButton
           className="d-lg-none"

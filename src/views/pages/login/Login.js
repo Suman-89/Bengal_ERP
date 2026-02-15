@@ -72,9 +72,9 @@ const Login = () => {
                         )}
                       </CInputGroupText>
                     </CInputGroup>
-                    <CRow className="align-items-center mt-3">
+                    <CRow className="d-flex justify-content-center align-items-center mt-3">
                       {/* Left Side - Button Group */}
-                      <CCol xs={6} className="d-flex align-items-center">
+                      <CCol xs={12} md={6} className="d-flex align-items-center">
                         <CButtonGroup role="group" aria-label="Action buttons">
                           <CButton color="info" size="sm" className="px-4 text-white" href="#/dashboard">
                             Ok
@@ -86,7 +86,7 @@ const Login = () => {
                       </CCol>
 
                       {/* Right Side - Link */}
-                      <CCol xs={6} className="text-end">
+                      <CCol xs={12} md={6} className="text-xs-center text-md-end mt-2 mt-md-0">
                         <CButton color="link" size="sm" className="p-0">
                           Forgot Password?
                         </CButton>

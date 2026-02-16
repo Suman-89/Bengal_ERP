@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { use, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 
 import {
@@ -14,6 +14,8 @@ import { getStyle } from '@coreui/utils'
 import { CChartBar, CChartLine } from '@coreui/react-chartjs'
 import CIcon from '@coreui/icons-react'
 import { cilArrowBottom, cilArrowTop, cilOptions } from '@coreui/icons'
+import { useNavigate } from 'react-router-dom'
+
 
 const WidgetsDropdown = (props) => {
   const widgetChartRef1 = useRef(null)
@@ -36,31 +38,30 @@ const WidgetsDropdown = (props) => {
       }
     })
   }, [widgetChartRef1, widgetChartRef2])
+const navigate = useNavigate();
 
   return (
     <CRow className={props.className} xs={{ gutter: 4 }}>
       <CCol sm={6} xl={4} xxl={3}>
         <CWidgetStatsA
           color="primary"
-          value={
-            <>
-              26K{' '}
-              <span className="fs-6 fw-normal">
-                (-12.4% <CIcon icon={cilArrowBottom} />)
-              </span>
-            </>
-          }
-          title="Users"
+          // value={
+          //   <>
+          //     26K{' '}
+          //     <span className="fs-6 fw-normal">
+          //       (-12.4% <CIcon icon={cilArrowBottom} />)
+          //     </span>
+          //   </>
+          // }
+          title="Sales"
           action={
             <CDropdown alignment="end">
               <CDropdownToggle color="transparent" caret={false} className="text-white p-0">
                 <CIcon icon={cilOptions} />
               </CDropdownToggle>
               <CDropdownMenu>
-                <CDropdownItem>Action</CDropdownItem>
-                <CDropdownItem>Another action</CDropdownItem>
-                <CDropdownItem>Something else here...</CDropdownItem>
-                <CDropdownItem disabled>Disabled action</CDropdownItem>
+                <CDropdownItem onClick={()=>navigate('/sales')}>Go to Sales</CDropdownItem>
+                <CDropdownItem onClick={()=>navigate('/purchase')}>Go to Purchase</CDropdownItem>
               </CDropdownMenu>
             </CDropdown>
           }
@@ -140,7 +141,7 @@ const WidgetsDropdown = (props) => {
               </span>
             </>
           }
-          title="Income"
+          title="Rokad"
           action={
             <CDropdown alignment="end">
               <CDropdownToggle color="transparent" caret={false} className="text-white p-0">
@@ -229,7 +230,7 @@ const WidgetsDropdown = (props) => {
               </span>
             </>
           }
-          title="Conversion Rate"
+          title="Ledger"
           action={
             <CDropdown alignment="end">
               <CDropdownToggle color="transparent" caret={false} className="text-white p-0">
@@ -301,7 +302,7 @@ const WidgetsDropdown = (props) => {
               </span>
             </>
           }
-          title="Sessions"
+          title="Stock"
           action={
             <CDropdown alignment="end">
               <CDropdownToggle color="transparent" caret={false} className="text-white p-0">

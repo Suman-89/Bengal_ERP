@@ -35,7 +35,7 @@ const AppBreadcrumb = () => {
   return (
     <CBreadcrumb className="my-0">
       <CBreadcrumbItem>
-  <Link to="/" style={{ textDecoration: 'none' }}>
+  <Link to="/dashboard" style={{ textDecoration: 'none' }}>
     Home
   </Link>
 </CBreadcrumbItem>

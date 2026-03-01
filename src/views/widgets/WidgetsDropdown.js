@@ -133,14 +133,14 @@ const navigate = useNavigate();
       <CCol sm={6} xl={4} xxl={3}>
         <CWidgetStatsA
           color="info"
-          value={
-            <>
-              $6.200{' '}
-              <span className="fs-6 fw-normal">
-                (40.9% <CIcon icon={cilArrowTop} />)
-              </span>
-            </>
-          }
+          // value={
+          //   <>
+          //     $6.200{' '}
+          //     <span className="fs-6 fw-normal">
+          //       (40.9% <CIcon icon={cilArrowTop} />)
+          //     </span>
+          //   </>
+          // }
           title="Rokad"
           action={
             <CDropdown alignment="end">
@@ -222,14 +222,14 @@ const navigate = useNavigate();
       <CCol sm={6} xl={4} xxl={3}>
         <CWidgetStatsA
           color="warning"
-          value={
-            <>
-              2.49%{' '}
-              <span className="fs-6 fw-normal">
-                (84.7% <CIcon icon={cilArrowTop} />)
-              </span>
-            </>
-          }
+          // value={
+          //   <>
+          //     2.49%{' '}
+          //     <span className="fs-6 fw-normal">
+          //       (84.7% <CIcon icon={cilArrowTop} />)
+          //     </span>
+          //   </>
+          // }
           title="Ledger"
           action={
             <CDropdown alignment="end">
@@ -294,14 +294,14 @@ const navigate = useNavigate();
       <CCol sm={6} xl={4} xxl={3}>
         <CWidgetStatsA
           color="danger"
-          value={
-            <>
-              44K{' '}
-              <span className="fs-6 fw-normal">
-                (-23.6% <CIcon icon={cilArrowBottom} />)
-              </span>
-            </>
-          }
+          // value={
+          //   <>
+          //     44K{' '}
+          //     <span className="fs-6 fw-normal">
+          //       (-23.6% <CIcon icon={cilArrowBottom} />)
+          //     </span>
+          //   </>
+          // }
           title="Stock"
           action={
             <CDropdown alignment="end">

@@ -295,7 +295,7 @@ const CashBook = () => {
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
-            <strong>Cash Book</strong>
+            <strong>Rokad</strong>
           </CCardHeader>
           <CCardBody>
             <CustomStyles />

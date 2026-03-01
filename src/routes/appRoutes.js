@@ -38,8 +38,8 @@ const SalesGraph = React.lazy(() => import('../App/Report/MonthlyGraphical/Sales
 
 // Main App Routes
 const AppRoutes = [
-  { path: '/dashboard', name: 'Home', element: Dashboard, exact: true },
-  { path: '/cashbook', name: 'Cash Book', element: CashBook, exact: true },
+  { path: '/dashboard', name: 'Dashboard', element: Dashboard, exact: true },
+  { path: '/cashbook', name: 'Rokad', element: CashBook, exact: true },
   { path: '/sales', name: 'Sales', element: Sales, exact: true },
   { path: '/sales/addnewsales', name: 'Add New Sales', element: AddNewSales, exact: true },
   { path: '/purchase', name: 'Purchase', element: Purchase, exact: true },

@@ -196,7 +196,7 @@ const Dashboard = () => {
                     <CTableHeaderCell className="bg-body-tertiary text-center">
                       Country
                     </CTableHeaderCell>
-                    <CTableHeaderCell className="bg-body-tertiary">Usage</CTableHeaderCell>
+                    {/* <CTableHeaderCell className="bg-body-tertiary">Usage</CTableHeaderCell> */}
                     <CTableHeaderCell className="bg-body-tertiary text-center">
                       Payment Method
                     </CTableHeaderCell>
@@ -219,7 +219,7 @@ const Dashboard = () => {
                       <CTableDataCell className="text-center">
                         <CIcon size="xl" icon={item.country.flag} title={item.country.name} />
                       </CTableDataCell>
-                      <CTableDataCell>
+                      {/* <CTableDataCell>
                         <div className="d-flex justify-content-between text-nowrap">
                           <div className="fw-semibold">{item.usage.value}%</div>
                           <div className="ms-3">
@@ -227,7 +227,7 @@ const Dashboard = () => {
                           </div>
                         </div>
                         <CProgress thin color={item.usage.color} value={item.usage.value} />
-                      </CTableDataCell>
+                      </CTableDataCell> */}
                       <CTableDataCell className="text-center">
                         <CIcon size="xl" icon={item.payment.icon} />
                       </CTableDataCell>

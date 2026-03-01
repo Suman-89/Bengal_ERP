@@ -38,51 +38,8 @@ const AddSalesForm = () => {
         validated={validated}
         onSubmit={handleSubmit}
       >
-        {/* <CCol md={6} className="d-flex gap-3">
-          <CFormCheck id="flexCheckDefault" label="Including Tax" />
-          <CFormCheck id="flexCheckDefault" label="Others" />
-          <CFormCheck id="flexCheckDefault" label="Orders" />
-          <CFormCheck id="flexCheckDefault" label="Advanced Search" />
-          <CFormCheck id="flexCheckDefault" label="Transfer" />
-        </CCol> */}
-        {/* <CCol md={6} className="d-flex gap-3 justify-content-space-between">
-          <div>
-          
-            <DatePicker
-              selected={purchaseDate}
-              onChange={(date) => setPurchaseDate(date)}
-              dateFormat="dd/MM/yyyy"
-              className="form-control"
-              placeholderText="Purchased Entry Date"
-            />
-          </div>
-
-          <div>
-          
-            <DatePicker
-              selected={savedDate}
-              onChange={(date) => setSavedDate(date)}
-              dateFormat="dd/MM/yyyy"
-              className="form-control"
-              placeholderText="Last Saved Entry Date"
-            />
-          </div>
-        </CCol> */}
-
-        <CCol xs={12}>
-          {/* <DocsComponents href="forms/select/" /> */}
-
-          {/* <DocsExample href="forms/select"> */}
-          {/* <CFormSelect aria-label="Default select example">
-            <option>Select one</option>
-            <option value="1">Retail Invoice Type List</option>
-            <option value="2">Converter</option>
-            <option value="3">QTL</option>
-          </CFormSelect> */}
-          {/* </DocsExample> */}
-        </CCol>
         <CCol md={6}>
-          <CFormLabel htmlFor="validationCustom01">Bill Number</CFormLabel>
+         <CFormLabel htmlFor="validationCustom01">Bill Number</CFormLabel>
           <CFormInput type="text" id="validationCustom01" defaultValue="001ABC" required />
           {/* <CFormFeedback valid>Looks good!</CFormFeedback> */}
         </CCol>
@@ -90,20 +47,9 @@ const AddSalesForm = () => {
           <CFormLabel htmlFor="validationCustom02">Name of Party</CFormLabel>
           <CFormInput type="text" id="validationCustom02" defaultValue="Otto" required />
           {/* <CFormFeedback valid>Looks good!</CFormFeedback> */}
-        </CCol>
+        </CCol> 
         <CCol md={6}>
-          {/* <CFormLabel htmlFor="validationCustomUsername">Username</CFormLabel>
-        <CInputGroup className="has-validation">
-          <CInputGroupText id="inputGroupPrepend">@</CInputGroupText>
-          <CFormInput
-            type="text"
-            id="validationCustomUsername"
-            defaultValue=""
-            aria-describedby="inputGroupPrepend"
-            required
-          />
-          <CFormFeedback invalid>Please choose a username.</CFormFeedback>
-        </CInputGroup> */}
+         
           <CFormLabel htmlFor="validationCustom02">Balance Amount</CFormLabel>
           <CFormInput type="text" id="validationCustom02" defaultValue="Otto" required />
         </CCol>

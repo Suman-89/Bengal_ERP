@@ -40,7 +40,7 @@ const _nav = [
       },
       {
         component: CNavItem,
-        name: 'Cash Book',
+        name: 'Rokad',
         to: '/cashbook',
       },
     ],
